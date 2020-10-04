@@ -16,7 +16,7 @@ namespace Walking_Dogs___Problem_Set
             var Draw = new char[y * 2 + 1, x * 4 + 1];
 
 
-
+            //need to create class casting, and awareness of surrounding classes. 
 
             //var Grid = new Square[y, x];   //creates replica grid, but with the corrosponding class instances
             CreateGrid();
