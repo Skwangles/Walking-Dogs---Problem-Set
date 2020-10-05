@@ -6,15 +6,19 @@ namespace Walking_Dogs___Problem_Set
 {
     class Entry : Square
     {
-       
-        public Entry(int x, int y, int width, int height) : base(x, y, width, height)
+        public Square[] adjacent = new Square[2];
+        public Entry(int x, int y, int width, int height) : base(x, y, width, height, false)
         {
-           
+            
 
         }
         
+        
 
-
+        public override string ToString()
+        {
+            return "S";
+        }
 
     }
 }

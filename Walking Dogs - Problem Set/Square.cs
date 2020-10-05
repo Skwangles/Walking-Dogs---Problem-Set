@@ -10,21 +10,17 @@ namespace Walking_Dogs___Problem_Set
         public int posY;
         public int width;
         public int height;
-        private bool isCat;
-        private string cat;
-        private string[,] result;
-        public Square(int posX, int posY, int width, int height)
+        public bool isCat { get; set; }        
+        protected string result;
+        public Square(int posX, int posY, int width, int height, bool cat)
         {
-            isCat = false;
-            cat = "";
+            isCat = cat;
+            
             this.width = width;
             this.height = height;
             this.posX = posX;
             this.posY = posY;
-            result = new string[2, 4]{
-                {"|","",cat,""},
-                {"+","-","-","-" }
-                };
+            result = " ";
         }       
 
 
@@ -34,51 +30,23 @@ namespace Walking_Dogs___Problem_Set
 
         }
 
-        public void Cat(bool isCats)
+        public bool CheckCat()
         {
-            if (isCats)
-            {
-                isCat = isCats;
-                cat = "C";
-
-            }
-            else
-            {
-                cat = "";
-            }
+            return isCat;
         }
 
-        public bool CheckCat()
+
+        public override string ToString()
         {
             if (isCat)
             {
-                return true;
+               return "C";
+
             }
             else
             {
-                return false;
+                return " ";
             }
-        }
-
-
-        public virtual string[,] Result()
-        {
-
-            /*
-              for (int i = 0; i < x*y; i++){
-              for(int k = 0; k < x*y; k++){
-              if (i% x == 0 || k % x == 0){
-                       string c = "-";
-                      }
-                       else{
-                       string c = " ";
-                      }
-                      console.write(c);
-                      }
-             }
-             }
-             */
-            return result;
         }
 
     }
